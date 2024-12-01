@@ -1,0 +1,176 @@
+/* Mengatur box model untuk semua elemen agar padding dan border tidak mempengaruhi lebar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar elemen */
+}
+
+
+/* Desain dasar untuk halaman */
+body {
+    background-color: #000080; /* Warna latar belakang halaman */
+    margin: 0;
+    padding: 0;
+}
+
+/* Kontainer utama dengan efek blur */
+.container {
+    max-width: 1000px; /* Lebar maksimum kontainer blur */
+    width: 90%; /* Kontainer menyesuaikan layar */
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.6); /* Transparansi putih */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Pastikan elemen tidak melampaui kontainer */
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+}
+
+/* Gaya untuk heading */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 40px; /* Ukuran font heading (30px + 10px) */
+}
+
+/* Tabel pendaftaran */
+table {
+    width: 100%; /* Tabel akan memenuhi lebar kontainer */
+    border-collapse: collapse;
+    margin: 20px 0;
+    table-layout: fixed; /* Paksa tabel untuk menyesuaikan kolom */
+    word-wrap: break-word; /* Memastikan teks panjang pecah ke baris berikutnya */
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px; /* Kurangi padding untuk menghemat ruang */
+    text-align: left;
+    font-size: 16px; /* Ukuran font lebih kecil agar tabel lebih ringkas */
+    line-height: 1.4; /* Tinggi baris untuk kerapatan teks yang lebih baik */
+    word-break: break-word; /* Pecah teks panjang di dalam sel */
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-size: 18px; /* Font header sedikit lebih besar */
+    text-align: center; /* Header tabel rata tengah */
+}
+
+/* Kontainer tabel untuk scroll horizontal jika diperlukan */
+.container-table {
+    overflow-x: auto; /* Tambahkan scroll horizontal hanya jika sangat diperlukan */
+    margin-top: 20px;
+}
+
+/* Form input dan tombol */
+form {
+    display: flex;
+    flex-direction: column; /* Membuat form teratur dalam kolom */
+    align-items: flex-start; /* Menyelaraskan elemen form ke kiri */
+    width: 80%; /* Menyesuaikan lebar form lebih kecil */
+    margin: 0 auto;
+    border: 1px solid #ccc; /* Garis tepi form */
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Kotak input dan tombol */
+input, select, button {
+    width: 100%; /* Semua elemen input akan memiliki lebar penuh */
+    padding: 12px; /* Memperbesar padding untuk input */
+    font-size: 26px; /* Ukuran font pada input (16px + 10px) */
+    margin: 12px 0; /* Memperbesar jarak antar elemen */
+    border-radius: 5px;
+    border: 1px solid #147437; /* Garis tepi pada elemen input */
+}
+
+/* Tombol Daftar dan Simpan Perubahan */
+button[type="submit"], .btn-submit {
+    background-color: #000080; /* Warna navy gelap */
+    color: white; /* Warna teks putih */
+    border: none; /* Hilangkan border */
+    padding: 10px 20px; /* Padding tombol */
+    font-size: 16px; /* Ukuran font */
+    border-radius: 5px; /* Membuat tombol melengkung */
+    cursor: pointer; /* Pointer untuk klik */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efek transisi */
+    text-align: center; /* Teks tombol rata tengah */
+}
+
+button[type="submit"]:hover, .btn-submit:hover {
+    background-color: #000080; /* Warna navy lebih gelap saat hover */
+    transform: scale(1.05); /* Efek sedikit membesar saat hover */
+}
+
+/* Tombol container */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 6px 10px; /* Kurangi padding tombol */
+    background-color: #000080; /* Warna navy gelap */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 14px; /* Ukuran font tombol lebih kecil */
+}
+
+.button-container a:hover {
+    background-color: #000080; /* Warna navylebih gelap saat hover */
+    transform: scale(0.95); /* Zoom out saat ditekan */
+}
+
+/* Tombol khusus (Edit, Hapus, Lihat) */
+button {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 4px 8px; /* Padding tombol diperkecil */
+    font-size: 14px; /* Ukuran font tombol lebih kecil */
+}
+
+button:hover {
+    transform: scale(0.95); /* Zoom out saat ditekan */
+}
+
+/* Tombol Edit */
+.btn-edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Tombol Hapus */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* Tombol Lihat */
+.btn-view {
+    background-color: #21f3d4;
+    color: white;
+}
+
+.btn-view:hover {
+    background-color: #1dc5ab;
+}
+
+/* Tombol Kembali ke Beranda */
+.button-container a {
+    font-size: 14px; /* Ukuran font tombol lebih kecil */
+    padding: 6px 10px; /* Padding tombol diperkecil */
+}
